@@ -1,8 +1,12 @@
 // eslint-disable-next-line no-undef
 module.exports = {
+  'globals' : {
+    'cy': true
+  },
   'env': {
     'browser': true,
     'es6': true,
+    'node': true,
     'jest/globals': true
   },
   'extends': [
@@ -26,7 +30,8 @@ module.exports = {
     ],
     'linebreak-style': [
       'error',
-      'unix'
+      // eslint-disable-next-line no-undef
+      process.platform === 'win32' ? 'windows' : 'unix'
     ],
     'quotes': [
       'error',
